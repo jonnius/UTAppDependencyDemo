@@ -1,0 +1,15 @@
+{
+    "name": "example.jonius",
+    "description": "Demo building external dependencies",
+    "architecture": "@CLICK_ARCH@",
+    "title": "Example",
+    "hooks": {
+        "example": {
+            "apparmor": "example.apparmor",
+            "desktop":  "example.desktop"
+        }
+    },
+    "version": "1.0.0",
+    "maintainer": "Jonatan Hatakeyama Zeidler <jonatan_zeidler@gmx.de>",
+    "framework" : "ubuntu-sdk-15.04.5"
+}
