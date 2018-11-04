@@ -1,0 +1,3 @@
+[submodule "example/libs/opencv"]
+	path = example/libs/opencv
+	url = git@github.com:opencv/opencv.git
