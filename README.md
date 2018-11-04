@@ -23,7 +23,7 @@ git commit -m "Add OpenCV as a submodule"
 ```
 
 ## Dependency Build Script
-Add the **build-dependency.sh** template to your repo. Edit the
+Add the [build-dependency.sh](https://github.com/jonnius/UTAppDependencyDemo/blob/master/build-dependency.sh) template to your repo. Edit the
 configuration section at the beginning of the file. Set the name
 of your dependency with `DEPENDENCY`. If needed, set additional
 arguments that need to be passed to CMake with `BUILD_ARGS`.
