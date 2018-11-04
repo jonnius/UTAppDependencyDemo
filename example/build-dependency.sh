@@ -6,18 +6,33 @@
 # The name of the dependency, as you named the git submodule.
 # Example: If you git submodule is located under /lib/opencv,
 # you need to set DEPENDENCY=opencv
-DEPENDENCY=dependency
+DEPENDENCY=opencv
 
 # Number of parallel make jobs. Be carefull, increasing this
 # number may lead to massive swapping on machines with low RAM!
 JOBS="1"
 
 # Build arguments
-BUILD_ARGS="-DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=OFF"
-# Add arguments as needed. For example, if you want to
-# set BUILD_TESTS to "ON", add:
-# BUILD_ARGS="$BUILD_ARGS -DBUILD_TESTS=ON"
-# BUILD_ARGS="$BUILD_ARGS -DBUILD_DOCS=OFF"
+BUILD_ARGS="-DCMAKE_BUILD_TYPE=Release"
+# Only build the modules that we need
+OPENCV_BUILD_ARGS="$OPENCV_BUILD_ARGS -DBUILD_LIST=core,imgproc,highgui,imgcodecs"
+# Disable some stuff to reduce build time
+OPENCV_BUILD_ARGS="$OPENCV_BUILD_ARGS -DBUILD_EXAMPLES=OFF"
+OPENCV_BUILD_ARGS="$OPENCV_BUILD_ARGS -DBUILD_DOCS=OFF"
+OPENCV_BUILD_ARGS="$OPENCV_BUILD_ARGS -DBUILD_PERF_TESTS=OFF"
+OPENCV_BUILD_ARGS="$OPENCV_BUILD_ARGS -DBUILD_TESTS=OFF"
+OPENCV_BUILD_ARGS="$OPENCV_BUILD_ARGS -DBUILD_OPENCV_APPS=OFF"
+# Enable some stuff to speed it up
+OPENCV_BUILD_ARGS="$OPENCV_BUILD_ARGS -DWITH_TBB=OFF"
+OPENCV_BUILD_ARGS="$OPENCV_BUILD_ARGS -DWITH_OPENMP=OFF" # we should try if this speeds up the image processing
+OPENCV_BUILD_ARGS="$OPENCV_BUILD_ARGS -DWITH_IPP=OFF"
+OPENCV_BUILD_ARGS="$OPENCV_BUILD_ARGS -DWITH_NVCUVID=OFF"
+OPENCV_BUILD_ARGS="$OPENCV_BUILD_ARGS -DWITH_CUDA=OFF"
+OPENCV_BUILD_ARGS="$OPENCV_BUILD_ARGS -DWITH_CSTRIPES=OFF"
+OPENCV_BUILD_ARGS="$OPENCV_BUILD_ARGS -DWITH_OPENCL=OFF"
+# Static libs
+OPENCV_BUILD_ARGS="$OPENCV_BUILD_ARGS -DBUILD_SHARED_LIBS=OFF"
+
 
 ## Configuration  -  End
 ########################
