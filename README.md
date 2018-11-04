@@ -125,3 +125,31 @@ your **clickable.json**:
 ```
 
 ## Example
+See the [example](https://github.com/jonnius/UTAppDependencyDemo/tree/master/example) demonstrating how to add some OpenCV Modules as dependencies. It has been create with `clickable create` and the following commits following this README:
+
+ - [Add OpenCV as a submodule](https://github.com/jonnius/UTAppDependencyDemo/commit/3664269e6b71bef22458396b448e4b9593e96a4e)
+ - [Add build-dependency.sh](https://github.com/jonnius/UTAppDependencyDemo/commit/7eeeef0b802153b65bdd6f3f28e0227b9ada0bc2#diff-1a79a4d60de6718e8e5b326e338ae533)
+ - [Edit build script](https://github.com/jonnius/UTAppDependencyDemo/commit/ac9b9fbbf03fa5b81407f0ef4da6eb5108789c69#diff-1a79a4d60de6718e8e5b326e338ae533)
+ - [Include and link the dependency](https://github.com/jonnius/UTAppDependencyDemo/commit/1a62f4930bb4bfb3944b5113d50852f97e76822f#diff-1a79a4d60de6718e8e5b326e338ae533)
+ - [Set custom build dir in clickable.json](https://github.com/jonnius/UTAppDependencyDemo/commit/0d1eca4789cd752d4f0c5c427c8637a7d51671ec#diff-1a79a4d60de6718e8e5b326e338ae533)
+ 
+
+### Building for the device
+Building the dependency must be done once:
+```
+.build-dependency
+```
+From now on build the App for your desktop
+```
+clickable
+```
+ 
+### Building for desktop
+Building the dependency must be done once:
+```
+.build-dependency host
+```
+From now on build the App for your desktop
+```
+clickable desktop
+```
